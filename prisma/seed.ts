@@ -198,6 +198,7 @@ async function main() {
       where: { email: employee.email },
       update: {
         name: employee.name,
+        password: employeePassword,
         role: "EMPLOYEE"
       },
       create: {
