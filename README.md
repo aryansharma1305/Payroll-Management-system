@@ -116,10 +116,9 @@ The system automatically calculates salary components:
    NEXTAUTH_URL="http://localhost:3000"
    ```
 
-4. **Initialize the database:**
+4. **Initialize and seed the database:**
    ```bash
-   npm run db:push
-   npm run seed
+   npm run db:setup
    ```
 
 5. **Start the development server:**
@@ -135,8 +134,10 @@ After seeding, you can log in with:
 
 | Role     | Email                  | Password  |
 |----------|------------------------|-----------|
-| Admin    | admin@company.com      | admin123  |
-| Employee | (seeded employee email)| emp123    |
+| Admin    | admin@payroll.com      | admin123  |
+| Employee | aarav.sharma@payroll.com | employee123 |
+
+All seeded employees can log in with password `employee123`.
 
 ## 🗄️ Database
 
@@ -150,8 +151,7 @@ This project uses SQLite for simplicity. The schema includes:
 
 To reset and reseed the database:
 ```bash
-npm run db:push
-npm run seed
+npm run db:setup
 ```
 
 ## 📜 Available Scripts
@@ -163,6 +163,7 @@ npm run seed
 | `npm run start`         | Start production server                  |
 | `npm run lint`          | Run ESLint                               |
 | `npm run db:push`       | Push Prisma schema to database           |
+| `npm run db:setup`      | Generate Prisma client, push schema, and seed sample data |
 | `npm run seed`          | Seed the database with sample data       |
 | `npm run prisma:generate` | Regenerate Prisma client               |
 
