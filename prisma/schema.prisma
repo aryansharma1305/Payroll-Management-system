@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("EMPLOYEE")
+  createdAt DateTime @default(now())
+}
+
+model Department {
+  id          String     @id @default(cuid())
+  name        String     @unique
+  description String
+  employees   Employee[]
+}
+
+model Employee {
+  id            String         @id @default(cuid())
+  employeeCode  String         @unique
+  name          String
+  email         String         @unique
+  phone         String
+  departmentId  String
+  designation   String
+  joiningDate   DateTime
+  basicSalary   Decimal
+  status        String         @default("ACTIVE")
+  department    Department     @relation(fields: [departmentId], references: [id], onDelete: Restrict)
+  attendance    Attendance[]
+  payrolls      Payroll[]
+}
+
+model Attendance {
+  id         String           @id @default(cuid())
+  employeeId String
+  date       DateTime
+  status     String
+  employee   Employee         @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@unique([employeeId, date])
+  @@index([date])
+}
+
+model Payroll {
+  id              String        @id @default(cuid())
+  employeeId      String
+  month           Int
+  year            Int
+  basicSalary     Decimal
+  hra             Decimal
+  da              Decimal
+  ta              Decimal
+  grossSalary     Decimal
+  pf              Decimal
+  esi             Decimal
+  tds             Decimal
+  totalDeductions Decimal
+  netSalary       Decimal
+  status          String        @default("DRAFT")
+  processedAt     DateTime?
+  employee        Employee      @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@unique([employeeId, month, year])
+  @@index([month, year])
+}
