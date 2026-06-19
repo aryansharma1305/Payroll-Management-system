@@ -4,13 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "npm run ensure-env",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
+    "predb:push": "npm run ensure-env",
     "db:push": "prisma db push",
+    "predb:setup": "npm run ensure-env",
     "db:setup": "prisma generate && prisma db push && prisma db seed",
+    "preseed": "npm run ensure-env",
+    "ensure-env": "node scripts/ensure-env.mjs",
     "seed": "prisma db seed"
   },
   "dependencies": {
