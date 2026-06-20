@@ -1,7 +1,30 @@
 {
   "name": "payroll-management-system",
   "version": "1.0.0",
+  "description": "A full-stack payroll management system with admin dashboards, employee self-service, attendance, payroll processing, and printable payslips.",
   "private": true,
+  "license": "MIT",
+  "author": "Aryan Sharma",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryansharma1305/Payroll-Management-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aryansharma1305/Payroll-Management-system/issues"
+  },
+  "homepage": "https://github.com/aryansharma1305/Payroll-Management-system#readme",
+  "keywords": [
+    "payroll",
+    "payroll-management",
+    "employee-management",
+    "attendance",
+    "payslip",
+    "nextjs",
+    "prisma",
+    "sqlite",
+    "nextauth",
+    "tailwindcss"
+  ],
   "scripts": {
     "dev": "next dev",
     "predev": "npm run ensure-env",

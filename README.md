@@ -1,5 +1,10 @@
 # 💰 Payroll Management System
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-SQLite-2D3748.svg)](https://www.prisma.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
+
 A full-stack payroll management system built with **Next.js 14**, **Prisma ORM**, **SQLite**, and **NextAuth.js**. Designed for small-to-medium businesses to manage employees, attendance, payroll processing, and payslip generation with role-based access control.
 
 ## 📸 Screenshot
@@ -169,7 +174,7 @@ npm run db:setup
 
 ## 📄 License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE). You are free to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software as permitted by the license.
 
 ---
 
